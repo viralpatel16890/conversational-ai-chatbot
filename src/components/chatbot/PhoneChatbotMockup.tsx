@@ -122,7 +122,7 @@ export const PhoneChatbotMockup: React.FC<PhoneChatbotMockupProps> = ({
               {parts.map((part, pIdx) => {
                 if (part.startsWith('**') && part.endsWith('**')) {
                   return (
-                    <strong key={pIdx} className="font-semibold text-white">
+                    <strong key={pIdx} className="font-semibold">
                       {part.slice(2, -2)}
                     </strong>
                   );
@@ -145,7 +145,7 @@ export const PhoneChatbotMockup: React.FC<PhoneChatbotMockupProps> = ({
       </div>
 
       {/* Internal Phone Screen Container */}
-      <div className="w-full h-full bg-[#0d1322] rounded-[34px] flex flex-col overflow-hidden pt-7 relative border border-slate-800/60">
+      <div className="w-full h-full bg-phone rounded-[34px] flex flex-col overflow-hidden pt-7 relative border border-slate-800/60">
         {/* Chatbot Top Bar */}
         <div className="px-4 py-2.5 bg-slate-900/95 border-b border-slate-800 flex items-center justify-between z-20">
           <div className="flex items-center gap-2.5">
@@ -171,7 +171,7 @@ export const PhoneChatbotMockup: React.FC<PhoneChatbotMockupProps> = ({
 
           <button
             onClick={onReset}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-50 hover:bg-slate-800 transition-colors"
             title="Reset Chat Session"
             aria-label="Reset Conversation"
           >
@@ -257,7 +257,7 @@ export const PhoneChatbotMockup: React.FC<PhoneChatbotMockupProps> = ({
         {speechError && (
           <div className="px-3 py-1.5 bg-rose-950/80 border-t border-rose-800 text-[11px] text-rose-300 flex items-center justify-between">
             <span className="truncate pr-1">{speechError}</span>
-            <button onClick={clearTranscript} className="text-white hover:underline text-[10px]">
+            <button onClick={clearTranscript} className="text-slate-50 hover:underline text-[10px]">
               Dismiss
             </button>
           </div>

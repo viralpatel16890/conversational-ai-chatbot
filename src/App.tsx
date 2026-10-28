@@ -9,7 +9,7 @@ import { AboutPage } from './pages/AboutPage';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-app text-slate-100 flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
       <Header />
       <div className="flex-1">
         <Routes>

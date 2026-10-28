@@ -71,7 +71,7 @@ export const LeftGuidedPanel: React.FC<LeftGuidedPanelProps> = ({
               }`}
             >
               <div className="flex items-center justify-between w-full">
-                <div className="flex items-center gap-1.5 font-medium text-slate-200 group-hover:text-white">
+                <div className="flex items-center gap-1.5 font-medium text-slate-200 group-hover:text-slate-50">
                   {getCategoryIcon(scenario.category)}
                   <span>{scenario.title}</span>
                 </div>

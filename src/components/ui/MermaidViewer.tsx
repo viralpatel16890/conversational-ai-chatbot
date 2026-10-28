@@ -7,27 +7,38 @@ interface MermaidViewerProps {
   id: string;
 }
 
+const readTheme = () => (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+
 export const MermaidViewer: React.FC<MermaidViewerProps> = ({ chart, id }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [svgContent, setSvgContent] = useState<string>('');
   const [hasError, setHasError] = useState<boolean>(false);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
+  const [theme, setTheme] = useState<'light' | 'dark'>(readTheme);
+
+  // Re-render the diagram when the app theme is toggled
+  useEffect(() => {
+    const observer = new MutationObserver(() => setTheme(readTheme()));
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
+    const isDark = theme === 'dark';
     mermaid.initialize({
       startOnLoad: false,
-      theme: 'dark',
+      theme: isDark ? 'dark' : 'default',
       securityLevel: 'loose',
       fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
       themeVariables: {
-        darkMode: true,
-        background: '#0f172a',
-        primaryColor: '#4f46e5',
-        primaryTextColor: '#f8fafc',
+        darkMode: isDark,
+        background: isDark ? '#0f172a' : '#ffffff',
+        primaryColor: isDark ? '#4f46e5' : '#e0e7ff',
+        primaryTextColor: isDark ? '#f8fafc' : '#1e1b4b',
         primaryBorderColor: '#6366f1',
-        lineColor: '#94a3b8',
-        secondaryColor: '#1e293b',
-        tertiaryColor: '#1e1b4b'
+        lineColor: isDark ? '#94a3b8' : '#475569',
+        secondaryColor: isDark ? '#1e293b' : '#f1f5f9',
+        tertiaryColor: isDark ? '#1e1b4b' : '#eef2ff'
       }
     });
 
@@ -54,7 +65,7 @@ export const MermaidViewer: React.FC<MermaidViewerProps> = ({ chart, id }) => {
     return () => {
       isMounted = false;
     };
-  }, [chart, id]);
+  }, [chart, id, theme]);
 
   const handleZoomIn = () => setZoomLevel((prev) => Math.min(prev + 0.15, 2.0));
   const handleZoomOut = () => setZoomLevel((prev) => Math.max(prev - 0.15, 0.6));
@@ -81,7 +92,7 @@ export const MermaidViewer: React.FC<MermaidViewerProps> = ({ chart, id }) => {
       <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-slate-900/90 border border-slate-700/80 rounded-lg p-1 z-10 shadow-md">
         <button
           onClick={handleZoomOut}
-          className="px-2 py-0.5 text-xs text-slate-300 hover:text-white hover:bg-slate-800 rounded font-bold"
+          className="px-2 py-0.5 text-xs text-slate-300 hover:text-slate-50 hover:bg-slate-800 rounded font-bold"
           title="Zoom Out"
         >
           -
@@ -91,14 +102,14 @@ export const MermaidViewer: React.FC<MermaidViewerProps> = ({ chart, id }) => {
         </span>
         <button
           onClick={handleZoomIn}
-          className="px-2 py-0.5 text-xs text-slate-300 hover:text-white hover:bg-slate-800 rounded font-bold"
+          className="px-2 py-0.5 text-xs text-slate-300 hover:text-slate-50 hover:bg-slate-800 rounded font-bold"
           title="Zoom In"
         >
           +
         </button>
         <button
           onClick={handleResetZoom}
-          className="p-1 text-slate-400 hover:text-white hover:bg-slate-800 rounded ml-1"
+          className="p-1 text-slate-400 hover:text-slate-50 hover:bg-slate-800 rounded ml-1"
           title="Reset Zoom"
         >
           <RotateCcw className="w-3 h-3" />

@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Bot, LineChart, GitFork, Compass, Info, Sparkles } from 'lucide-react';
+import { Bot, LineChart, GitFork, Compass, Info, Sparkles, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../../hooks/useTheme';
 
 export const Header: React.FC = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
-    <header className="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3">
+    <header className="sticky top-0 z-50 bg-header/90 backdrop-blur-md border-b border-slate-800/80 px-4 lg:px-8 py-3">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand identity */}
         <div className="flex items-center gap-3">
@@ -35,7 +37,7 @@ export const Header: React.FC = () => {
               `flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all ${
                 isActive
                   ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  : 'text-slate-300 hover:text-slate-50 hover:bg-slate-800/60'
               }`
             }
           >
@@ -49,7 +51,7 @@ export const Header: React.FC = () => {
               `flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all ${
                 isActive
                   ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  : 'text-slate-300 hover:text-slate-50 hover:bg-slate-800/60'
               }`
             }
           >
@@ -63,7 +65,7 @@ export const Header: React.FC = () => {
               `flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all ${
                 isActive
                   ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  : 'text-slate-300 hover:text-slate-50 hover:bg-slate-800/60'
               }`
             }
           >
@@ -77,7 +79,7 @@ export const Header: React.FC = () => {
               `flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all ${
                 isActive
                   ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  : 'text-slate-300 hover:text-slate-50 hover:bg-slate-800/60'
               }`
             }
           >
@@ -91,13 +93,21 @@ export const Header: React.FC = () => {
               `flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium transition-all ${
                 isActive
                   ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  : 'text-slate-300 hover:text-slate-50 hover:bg-slate-800/60'
               }`
             }
           >
             <Info className="w-4 h-4" />
             <span className="hidden sm:inline">About</span>
           </NavLink>
+          <button
+            onClick={toggleTheme}
+            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            className="ml-1 p-2 rounded-lg text-slate-300 hover:text-slate-50 hover:bg-slate-800/60 transition-all"
+          >
+            {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+          </button>
         </nav>
       </div>
     </header>

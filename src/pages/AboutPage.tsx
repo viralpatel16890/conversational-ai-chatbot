@@ -16,7 +16,7 @@ export const AboutPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-app text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header */}
         <div className="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -25,7 +25,7 @@ export const AboutPage: React.FC = () => {
               <span className="p-2 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
                 <Info className="w-5 h-5" />
               </span>
-              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
                 About This Demonstration
               </h1>
             </div>
@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
               <FileText className="w-4 h-4" />
               <span>1. Fictional Business Context</span>
             </div>
-            <h2 className="text-lg font-bold text-white">Nova Retail Customer Care</h2>
+            <h2 className="text-lg font-bold text-slate-50">Nova Retail Customer Care</h2>
             <p className="text-xs text-slate-300 leading-relaxed">
               The application simulates an omnichannel customer self-service assistant for a high-growth ecommerce retailer. In this operational model, conversational deflection balances speed of resolution against customer satisfaction (CSAT) and brand protection.
             </p>
@@ -67,7 +67,7 @@ export const AboutPage: React.FC = () => {
               <Brain className="w-4 h-4" />
               <span>2. Strategic Architecture</span>
             </div>
-            <h2 className="text-lg font-bold text-white">Deterministic & Explainable NLU</h2>
+            <h2 className="text-lg font-bold text-slate-50">Deterministic & Explainable NLU</h2>
             <p className="text-xs text-slate-300 leading-relaxed">
               Unlike unpredictable generative wrappers, this system operates on a deterministic, testable state machine. Every interaction pairs a recognized intent with transparent business rationale, threshold checks, and fallback mechanisms.
             </p>
@@ -80,7 +80,7 @@ export const AboutPage: React.FC = () => {
 
         {/* Deep Dive Pillars */}
         <div className="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 shadow-xl space-y-6">
-          <h2 className="text-xl font-bold text-white border-b border-slate-800 pb-3">
+          <h2 className="text-xl font-bold text-slate-50 border-b border-slate-800 pb-3">
             Key Conversational AI Analyst Competencies Showcased
           </h2>
 

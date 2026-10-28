@@ -18,7 +18,7 @@ export const DemoPage: React.FC = () => {
   const [activeTabMobile, setActiveTabMobile] = useState<'chat' | 'scenarios' | 'strategy'>('chat');
 
   return (
-    <div className="min-h-[calc(100vh-65px)] bg-[#0b0f19] text-slate-100 flex flex-col justify-between">
+    <div className="min-h-[calc(100vh-65px)] bg-app text-slate-100 flex flex-col justify-between">
       {/* Top Value Banner */}
       <div className="bg-gradient-to-r from-indigo-950/60 via-purple-950/40 to-slate-900 border-b border-indigo-900/30 px-4 py-2.5">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs">
@@ -47,7 +47,7 @@ export const DemoPage: React.FC = () => {
             className={`flex-1 py-1.5 text-xs font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-all ${
               activeTabMobile === 'scenarios'
                 ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-400 hover:text-slate-50'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
@@ -58,7 +58,7 @@ export const DemoPage: React.FC = () => {
             className={`flex-1 py-1.5 text-xs font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-all ${
               activeTabMobile === 'chat'
                 ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-400 hover:text-slate-50'
             }`}
           >
             <Sparkles className="w-3.5 h-3.5" />
@@ -69,7 +69,7 @@ export const DemoPage: React.FC = () => {
             className={`flex-1 py-1.5 text-xs font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-all ${
               activeTabMobile === 'strategy'
                 ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-400 hover:text-slate-50'
             }`}
           >
             <Compass className="w-3.5 h-3.5" />

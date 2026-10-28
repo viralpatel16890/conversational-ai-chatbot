@@ -11,7 +11,7 @@ export const ConversationFlowsPage: React.FC = () => {
   const currentFlow = CONVERSATION_FLOWS.find((f) => f.id === selectedFlowId) || CONVERSATION_FLOWS[0];
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-app text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
         <div className="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -20,7 +20,7 @@ export const ConversationFlowsPage: React.FC = () => {
               <span className="p-2 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
                 <GitFork className="w-5 h-5" />
               </span>
-              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
                 Conversational Flow Architectures
               </h1>
             </div>
@@ -65,7 +65,7 @@ export const ConversationFlowsPage: React.FC = () => {
           <div className="lg:col-span-8 bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl space-y-4">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div>
-                <h2 className="text-base sm:text-lg font-bold text-white">{currentFlow.title}</h2>
+                <h2 className="text-base sm:text-lg font-bold text-slate-50">{currentFlow.title}</h2>
                 <p className="text-xs text-slate-400 mt-0.5">{currentFlow.description}</p>
               </div>
               <span className="text-[10px] font-mono uppercase bg-indigo-950 text-indigo-300 border border-indigo-800 px-2 py-0.5 rounded">

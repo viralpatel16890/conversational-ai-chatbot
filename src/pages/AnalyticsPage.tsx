@@ -20,7 +20,7 @@ export const AnalyticsPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-app text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
         <div className="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -29,7 +29,7 @@ export const AnalyticsPage: React.FC = () => {
               <span className="p-2 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
                 <LineChart className="w-5 h-5" />
               </span>
-              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
                 Conversational Analytics & KPI Dashboard
               </h1>
             </div>
@@ -55,7 +55,7 @@ export const AnalyticsPage: React.FC = () => {
               <Layers className="w-4 h-4 text-indigo-400" />
             </div>
             <div className="my-2">
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <div className="text-2xl sm:text-3xl font-bold text-slate-50 tracking-tight">
                 {BASE_SIMULATED_ANALYTICS.totalSimulatedConversations.toLocaleString()}
               </div>
               <span className="text-[11px] text-emerald-400 flex items-center gap-1 mt-1 font-medium">
@@ -75,7 +75,7 @@ export const AnalyticsPage: React.FC = () => {
               <TrendingUp className="w-4 h-4 text-emerald-400" />
             </div>
             <div className="my-2">
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <div className="text-2xl sm:text-3xl font-bold text-slate-50 tracking-tight">
                 {BASE_SIMULATED_ANALYTICS.intentRecognitionRate}%
               </div>
               <span className="text-[11px] text-emerald-400 flex items-center gap-1 mt-1 font-medium">
@@ -94,7 +94,7 @@ export const AnalyticsPage: React.FC = () => {
               <Percent className="w-4 h-4 text-sky-400" />
             </div>
             <div className="my-2">
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <div className="text-2xl sm:text-3xl font-bold text-slate-50 tracking-tight">
                 {BASE_SIMULATED_ANALYTICS.firstContactResolutionRate}%
               </div>
               <span className="text-[11px] text-sky-400 flex items-center gap-1 mt-1 font-medium">
@@ -113,7 +113,7 @@ export const AnalyticsPage: React.FC = () => {
               <Clock className="w-4 h-4 text-purple-400" />
             </div>
             <div className="my-2">
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <div className="text-2xl sm:text-3xl font-bold text-slate-50 tracking-tight">
                 {BASE_SIMULATED_ANALYTICS.avgTurnsToResolution} turns
               </div>
               <span className="text-[11px] text-purple-400 flex items-center gap-1 mt-1 font-medium">
@@ -134,7 +134,7 @@ export const AnalyticsPage: React.FC = () => {
             </div>
             <div>
               <div className="text-xs text-slate-400">Fallback & Scope Redirection Rate</div>
-              <div className="text-lg font-bold text-white">
+              <div className="text-lg font-bold text-slate-50">
                 {BASE_SIMULATED_ANALYTICS.fallbackRate}%
               </div>
               <div className="text-[10px] text-slate-500">Non-domain & unknown queries redirected</div>
@@ -147,7 +147,7 @@ export const AnalyticsPage: React.FC = () => {
             </div>
             <div>
               <div className="text-xs text-slate-400">Live Agent Escalation Rate</div>
-              <div className="text-lg font-bold text-white">
+              <div className="text-lg font-bold text-slate-50">
                 {BASE_SIMULATED_ANALYTICS.escalationRate}%
               </div>
               <div className="text-[10px] text-slate-500">Explicit transfer or loop breaker trigger</div>
@@ -160,7 +160,7 @@ export const AnalyticsPage: React.FC = () => {
             </div>
             <div>
               <div className="text-xs text-slate-400">Clarification & Slot Prompt Rate</div>
-              <div className="text-lg font-bold text-white">
+              <div className="text-lg font-bold text-slate-50">
                 {BASE_SIMULATED_ANALYTICS.clarificationRate}%
               </div>
               <div className="text-[10px] text-slate-500">Missing entity disambiguation prompts</div>
@@ -174,7 +174,7 @@ export const AnalyticsPage: React.FC = () => {
           <div className="lg:col-span-6 bg-slate-900/90 rounded-2xl border border-slate-800 p-5 sm:p-6 shadow-xl space-y-4">
             <div className="border-b border-slate-800 pb-3 flex items-center justify-between">
               <div>
-                <h2 className="text-base font-bold text-white">Traffic Distribution by Intent</h2>
+                <h2 className="text-base font-bold text-slate-50">Traffic Distribution by Intent</h2>
                 <p className="text-xs text-slate-400">Share of user volume across primary support intents</p>
               </div>
               <span className="text-xs font-mono text-indigo-400">100% Normalized</span>
@@ -209,7 +209,7 @@ export const AnalyticsPage: React.FC = () => {
           <div className="lg:col-span-6 bg-slate-900/90 rounded-2xl border border-slate-800 p-5 sm:p-6 shadow-xl space-y-4">
             <div className="border-b border-slate-800 pb-3 flex items-center justify-between">
               <div>
-                <h2 className="text-base font-bold text-white">Containment by Journey Type</h2>
+                <h2 className="text-base font-bold text-slate-50">Containment by Journey Type</h2>
                 <p className="text-xs text-slate-400">Automated Resolution vs Escalation Rate per Scenario</p>
               </div>
               <div className="flex items-center gap-3 text-xs">
@@ -258,7 +258,7 @@ export const AnalyticsPage: React.FC = () => {
         <div className="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 shadow-xl space-y-4">
           <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
             <Info className="w-5 h-5 text-indigo-400" />
-            <h2 className="text-base font-bold text-white">Conversational Strategy Metric Glossary</h2>
+            <h2 className="text-base font-bold text-slate-50">Conversational Strategy Metric Glossary</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

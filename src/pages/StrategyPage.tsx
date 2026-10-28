@@ -40,7 +40,7 @@ export const StrategyPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-app text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Page Hero Header */}
         <div className="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -49,7 +49,7 @@ export const StrategyPage: React.FC = () => {
               <span className="p-2 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
                 <Compass className="w-5 h-5" />
               </span>
-              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
                 Intent Catalog & Decision Rules
               </h1>
             </div>
@@ -135,7 +135,7 @@ export const StrategyPage: React.FC = () => {
                   </span>
                   <span className="text-xs text-slate-400">• High Confidence Threshold: 0.70</span>
                 </div>
-                <h2 className="text-xl font-bold text-white">{selectedIntent.name}</h2>
+                <h2 className="text-xl font-bold text-slate-50">{selectedIntent.name}</h2>
               </div>
               <button
                 onClick={() => navigate('/')}
@@ -273,7 +273,7 @@ export const StrategyPage: React.FC = () => {
             <div>
               <div className="flex items-center gap-2">
                 <Sliders className="w-5 h-5 text-indigo-400" />
-                <h2 className="text-xl font-bold text-white">
+                <h2 className="text-xl font-bold text-slate-50">
                   Conversational Governance & Decision Rules
                 </h2>
               </div>
