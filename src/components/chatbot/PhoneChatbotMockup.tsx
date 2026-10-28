@@ -32,6 +32,7 @@ export const PhoneChatbotMockup: React.FC<PhoneChatbotMockupProps> = ({
 }) => {
   const [inputText, setInputText] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const {
@@ -53,7 +54,9 @@ export const PhoneChatbotMockup: React.FC<PhoneChatbotMockupProps> = ({
 
   // Scroll to bottom when messages update or typing indicator changes
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    // Scroll only the chat container; scrollIntoView would also scroll the whole page
+    const el = scrollRef.current;
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
   }, [messages, isTyping]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -177,7 +180,7 @@ export const PhoneChatbotMockup: React.FC<PhoneChatbotMockupProps> = ({
         </div>
 
         {/* Conversation Stream */}
-        <div className="flex-1 overflow-y-auto px-3.5 py-3 space-y-3.5 scroll-smooth">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto px-3.5 py-3 space-y-3.5 scroll-smooth">
           <div className="text-center my-1">
             <span className="text-[10px] text-slate-400 bg-slate-900/90 px-2.5 py-1 rounded-full border border-slate-800">
               Interactive Simulated Conversation
