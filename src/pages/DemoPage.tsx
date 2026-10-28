@@ -78,10 +78,10 @@ export const DemoPage: React.FC = () => {
         </div>
 
         {/* 3-Column Desktop Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start flex-1">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(260px,1fr)_minmax(0,420px)_minmax(260px,1fr)] gap-5 items-start flex-1">
           {/* Left Column: Guided Demo Scenarios */}
           <div
-            className={`lg:col-span-3.5 h-full ${
+            className={`min-w-0 h-full ${
               activeTabMobile === 'scenarios' ? 'block' : 'hidden lg:block'
             }`}
           >
@@ -98,7 +98,7 @@ export const DemoPage: React.FC = () => {
 
           {/* Center Column: Phone Mockup (Focal Point) */}
           <div
-            className={`lg:col-span-5 flex justify-center items-center ${
+            className={`min-w-0 flex justify-center items-center ${
               activeTabMobile === 'chat' ? 'block' : 'hidden lg:flex'
             }`}
           >
@@ -113,7 +113,7 @@ export const DemoPage: React.FC = () => {
 
           {/* Right Column: Strategic Insights & Telemetry */}
           <div
-            className={`lg:col-span-3.5 h-full ${
+            className={`min-w-0 h-full ${
               activeTabMobile === 'strategy' ? 'block' : 'hidden lg:block'
             }`}
           >
